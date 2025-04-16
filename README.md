@@ -56,3 +56,13 @@ Desarrollar un sitio web funcional que sea:
 1. Clona este repositorio en tu máquina local:
    ```bash
    git clone https://github.com/MartinBonari/PectoralGym.git
+2. Navega hasta la carpeta del proyecto:
+   ```bash
+   cd PectoralGym
+3. Abre el archivo `index.html`
+
+### **Opcion 2: Probar el deploy o despliegue en GitHub Pages**
+-Explora el proyecto a traves del siguiente enlace: ____________________
+
+## **Créditos y Agradecimientos 🙌**
+Este proyecto fue desarrollado por **Martin Alejandro Bonari** como parte de la materia **Programación y Servicios Web**, en la **Universidad Nacional de Jujuy - UNJU**, *Facultad de Ingeniería*. Agradecimiento especial a los profesores **Pablo Gudiño**, **Ángel Eduardo Casasola**, y **Alfredo Espinoza** por su guía en este trabajo.
