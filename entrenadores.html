@@ -4,14 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Description" content="Prototipo web de PectoralGYM, diseño responsivo, animaciones modernas y componentes interactivos para gimnasios." />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="resources/style/css/style.css">
+    <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>PectoralGYM | Entrenadores</title>
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><i class="bi bi-gem"></i>PectoralGYM<i class="bi bi-gem"></i></a>
 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="btn btn-dark">
+                            <a class="nav-link active" href="index.html">Inicio</a>
+                        </li>
+                        <li class="btn btn-dark">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-dark dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link" href="clases.html">Clases</a>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="clases.html" type="button">Spinning</a></li>
+                                    <li><a class="dropdown-item" href="clases.html" type="button">Yoga</a></li>
+                                    <li><a class="dropdown-item" href="clases.html" type="button">Funcional</a></li>
+                                    <li><a class="dropdown-item" href="clases.html" type="button">Kick-Boxing</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-dark dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link" href="precios.html">Precios</a>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="precios.html" type="button">Plan GymRat-VIP</a></li>
+                                    <li><a class="dropdown-item" href="precios.html" type="button">Plan Medium</a></li>
+                                    <li><a class="dropdown-item" href="precios.html" type="button">Plan Gymbro</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="btn btn-dark">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item ms-2 d-flex align-items-center">
+                            <div class="theme-toggle">
+                                <input type="checkbox" class="btn-check" id="darkmode-toggle" autocomplete="off">
+                                <label class="btn btn-outline-light btn-sm" for="darkmode-toggle">
+                                    <i class="bi bi-moon-stars-fill"></i>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="resources/js/navbar-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js" defer></script>
 </body>
 </html>
