@@ -1,6 +1,6 @@
 # **PectoralGym - Prototipo Web Responsivo 🏋️‍♂️💻**
 
-📅 **Fecha de entrega:** 8 de abril de 2025  
+📅 **Fecha de entrega:** 19 de abril de 2025  
 📍 **Universidad:** Universidad Nacional de Jujuy, Facultad de Ingeniería  
 👨‍💻 **Alumno:** Martin Alejandro Bonari  
 🎓 **Carrera:** Analista Programador Universitario

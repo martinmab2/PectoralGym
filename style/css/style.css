@@ -1,32 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-body {
-    font-family: 'Montserrat', sans-serif;
-  }
 .mega-menu {
     column-count: 2;
     column-gap: 20px;
-  }
+}
   
-  .mega-menu .dropdown-item {
+.mega-menu .dropdown-item {
     padding: 10px 20px;
     font-size: 16px;
     border-bottom: 1px solid #f1f1f1;
-  }
+}
   
-  .mega-menu .dropdown-item:hover {
+.mega-menu .dropdown-item:hover {
     background-color: #f8f9fa;
     color: #000;
-  }
+}
 
-/* Animación del navbar brand */
+/* Navbar Brand */
 .navbar-brand {
     position: relative;
-    transition: all 0.5s ease;
     padding: 8px 16px;
     border-radius: 8px;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
     background: linear-gradient(45deg, #1a1a1a, #2c2c2c);
+    transition: all 0.5s ease;
 }
 
 .navbar-brand:hover {
@@ -37,11 +32,10 @@ body {
     letter-spacing: 1px;
 }
 
-/* Animación de los iconos */
 .navbar-brand i {
-    transition: all 0.5s ease;
     display: inline-block;
     margin: 0 5px;
+    transition: all 0.5s ease;
 }
 
 .navbar-brand:hover i:first-child {
@@ -54,20 +48,14 @@ body {
     color: #ffd700;
 }
 
-/* Efecto de brillo */
 .navbar-brand::after {
     content: '';
     position: absolute;
     top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: linear-gradient(
-        45deg,
-        transparent,
-        rgba(255, 215, 0, 0.2),
-        transparent
-    );
+    left: -300%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.2), transparent);
     transition: all 0.8s ease;
 }
 
@@ -76,7 +64,7 @@ body {
     left: -50%;
 }
 
-/* Dark Mode Toggle Styles */
+/* Theme Toggle */
 .theme-toggle .btn-outline-light {
     border-radius: 50px;
     width: 40px;
@@ -93,6 +81,12 @@ body {
     transition: all 0.5s ease;
 }
 
+.theme-toggle .btn-check:checked + .btn-outline-light {
+    background-color: #ffd700;
+    border-color: #ffd700;
+    color: #000;
+}
+
 .theme-toggle .btn-check:checked + .btn-outline-light .bi {
     transform: rotate(360deg);
 }
@@ -101,8 +95,200 @@ body {
     transform: scale(1.1);
 }
 
-.theme-toggle .btn-check:checked + .btn-outline-light {
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.video-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transition: transform 0.3s ease-out;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.85), rgba(0,0,0,0.65));
+    z-index: 1;
+pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mouse */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content .text-white {
+    color: #ffffff !important;
+}
+
+.hero-text {
+    transition-delay: 0.2s;
+}
+
+.hero-buttons {
+    transition-delay: 0.4s;
+}
+
+/* Animation Classes */
+.fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button Hover Effects */
+.hero-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.hero-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Testimonial Section */
+.testimonial-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.carousel-item.active .testimonial-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.testimonial-author {
+    position: relative;
+    padding-top: 20px;
+}
+
+.testimonial-author::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
     background-color: #ffd700;
-    border-color: #ffd700;
-    color: #000;
+}
+
+/* Footer Links */
+.footer a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ffd700 !important;
+    transform: translateY(-3px);
+    display: inline-block;
+}
+
+.footer .bi {
+    transition: all 0.3s ease;
+}
+
+.footer a:hover .bi {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.social-link {
+    font-family: 'Righteous', cursive;
+}
+
+/* Footer Styles */
+.footer {
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+/* Class Card */
+.class-card {
+    background: #212529;  /* Bootstrap's bg-dark color */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-img-wrapper {
+    height: 200px;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.class-card .card-body {
+    background: #212529;  /* Same as card background */
+}
+
+.class-card .card-title {
+    color: #ffd700;  /* Keeping the gold accent for titles */
+}
+
+.class-card .card-text {
+    color: rgba(255, 255, 255, 0.85);  /* Bootstrap's text-white with slight transparency */
+}
+
+/* Counter Section */
+.counter-section {
+    position: relative;
+    background: linear-gradient(rgba(33, 37, 41, 0.95), rgba(33, 37, 41, 0.95));
+}
+
+.counter-item {
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.counter-item:hover {
+    transform: translateY(-10px);
+}
+
+.counter {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.counter::after {
+    content: "+";
+    font-size: 2rem;
+    position: relative;
+    top: -0.5rem;
+    margin-left: 0.2rem;
 }
