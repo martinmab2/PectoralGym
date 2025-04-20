@@ -76,6 +76,213 @@
             </div>
         </div>
     </section>
+    <section class="classes-section py-5">
+        <div class="container">
+            <!-- Filtros (mantener los existentes) -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="filter-buttons d-flex flex-wrap justify-content-center gap-2 mb-4">
+                        <button type="button" class="btn btn-primary filter-btn" data-filter="all">
+                            Todas
+                        </button>
+                        <button type="button" class="btn btn-outline-primary filter-btn" data-filter="cardio">
+                            Cardio
+                        </button>
+                        <button type="button" class="btn btn-outline-primary filter-btn" data-filter="fuerza">
+                            Fuerza
+                        </button>
+                        <button type="button" class="btn btn-outline-primary filter-btn" data-filter="flexibilidad">
+                            Flexibilidad
+                        </button>
+                        <button type="button" class="btn btn-outline-primary filter-btn" data-filter="combate">
+                            Combate
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nueva estructura para la galería masonry -->
+            <div class="row" id="classes-gallery">
+                <div class="masonry-grid">
+                    <!-- Cardio - HIIT -->
+                    <div class="class-item" data-category="cardio">
+                        <div class="card h-100 bg-dark text-white">
+                            <div class="card-img-wrapper">
+                                <img src="assets/img/hiit.jpg" class="card-img-top" alt="Clase de HIIT">
+                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <h5 class="card-title">HIIT</h5>
+                                    <span class="badge bg-primary mb-2">Cardio</span>
+                                    <p class="card-text">Entrenamiento de alta intensidad por intervalos</p>
+                                    <div class="class-details mt-2">
+                                        <p class="mb-1"><i class="bi bi-clock me-2"></i>Lu/Mi/Vi 7:00-8:00</p>
+                                        <p class="mb-1"><i class="bi bi-person me-2"></i>Patricia Sánchez</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cardio - Spinning -->
+                    <div class="class-item" data-category="cardio">
+                        <div class="card h-100 bg-dark text-white">
+                            <div class="card-img-wrapper">
+                                <img src="assets/img/spinning.jpg" class="card-img-top" alt="Clase de Spinning">
+                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <h5 class="card-title">Spinning</h5>
+                                    <span class="badge bg-primary mb-2">Cardio</span>
+                                    <p class="card-text">Ciclismo indoor de alta energía</p>
+                                    <div class="class-details mt-2">
+                                        <p class="mb-1"><i class="bi bi-clock me-2"></i>Ma/Ju/Sa 8:00-9:00</p>
+                                        <p class="mb-1"><i class="bi bi-person me-2"></i>Carlos Ruiz</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fuerza - CrossFit -->
+                    <div class="class-item" data-category="fuerza">
+                        <div class="card h-100 bg-dark text-white">
+                            <div class="card-img-wrapper">
+                                <img src="assets/img/crossfit.jpg" class="card-img-top" alt="Clase de CrossFit">
+                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <h5 class="card-title">CrossFit</h5>
+                                    <span class="badge bg-danger mb-2">Fuerza</span>
+                                    <p class="card-text">Entrenamiento funcional de alta intensidad</p>
+                                    <div class="class-details mt-2">
+                                        <p class="mb-1"><i class="bi bi-clock me-2"></i>Lu/Mi/Vi 18:00-19:30</p>
+                                        <p class="mb-1"><i class="bi bi-person me-2"></i>Miguel Torres</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fuerza - Pesas -->
+                    <div class="class-item" data-category="fuerza">
+                        <div class="card h-100 bg-dark text-white">
+                            <div class="card-img-wrapper">
+                                <img src="assets/img/levantamientodepesas.jpg" class="card-img-top" alt="Clase de Levantamiento de Pesas">
+                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <h5 class="card-title">Levantamiento de Pesas</h5>
+                                    <span class="badge bg-danger mb-2">Fuerza</span>
+                                    <p class="card-text">Desarrolla tu fuerza y masa muscular con técnicas profesionales</p>
+                                    <div class="class-details mt-2">
+                                        <p class="mb-1"><i class="bi bi-clock me-2"></i>Horarios: Ma/Ju/Sa 10:00-11:30</p>
+                                        <p class="mb-1"><i class="bi bi-person me-2"></i>Trainer: Fernando López</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flexibilidad - Yoga -->
+                    <div class="class-item" data-category="flexibilidad">
+                        <div class="card h-100 bg-dark text-white">
+                            <div class="card-img-wrapper">
+                                <img src="assets/img/yoga.jpg" class="card-img-top" alt="Clase de Yoga">
+                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <h5 class="card-title">Yoga</h5>
+                                    <span class="badge bg-success mb-2">Flexibilidad</span>
+                                    <p class="card-text">Mejora tu flexibilidad y encuentra tu equilibrio interior</p>
+                                    <div class="class-details mt-2">
+                                        <p class="mb-1"><i class="bi bi-clock me-2"></i>Horarios: Ma/Ju 9:00-10:30</p>
+                                        <p class="mb-1"><i class="bi bi-person me-2"></i>Trainer: Ana Silva</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flexibilidad - Pilates -->
+                    <div class="class-item" data-category="flexibilidad">
+                        <div class="card h-100 bg-dark text-white">
+                            <div class="card-img-wrapper">
+                                <img src="assets/img/pilates.jpg" class="card-img-top" alt="Clase de Pilates">
+                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <h5 class="card-title">Pilates</h5>
+                                    <span class="badge bg-success mb-2">Flexibilidad</span>
+                                    <p class="card-text">Fortalece tu core y mejora tu postura con ejercicios controlados</p>
+                                    <div class="class-details mt-2">
+                                        <p class="mb-1"><i class="bi bi-clock me-2"></i>Horarios: Lu/Mi/Vi 11:00-12:00</p>
+                                        <p class="mb-1"><i class="bi bi-person me-2"></i>Trainer: Laura Martínez</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Combate - Boxeo -->
+                    <div class="class-item" data-category="combate">
+                        <div class="card h-100 bg-dark text-white">
+                            <div class="card-img-wrapper">
+                                <img src="assets/img/boxeo.jpg" class="card-img-top" alt="Clase de Boxeo">
+                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <h5 class="card-title">Boxeo</h5>
+                                    <span class="badge bg-warning mb-2">Combate</span>
+                                    <p class="card-text">Aprende técnicas de boxeo y mejora tu condición física</p>
+                                    <div class="class-details mt-2">
+                                        <p class="mb-1"><i class="bi bi-clock me-2"></i>Horarios: Lu/Mi/Vi 19:00-20:30</p>
+                                        <p class="mb-1"><i class="bi bi-person me-2"></i>Trainer: Roberto Díaz</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Combate - Kickboxing -->
+                    <div class="class-item" data-category="combate">
+                        <div class="card h-100 bg-dark text-white">
+                            <div class="card-img-wrapper">
+                                <img src="assets/img/kickboxing.jpg" class="card-img-top" alt="Clase de Kickboxing">
+                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <h5 class="card-title">Kickboxing</h5>
+                                    <span class="badge bg-warning mb-2">Combate</span>
+                                    <p class="card-text">Combina técnicas de boxeo y patadas para un entrenamiento completo</p>
+                                    <div class="class-details mt-2">
+                                        <p class="mb-1"><i class="bi bi-clock me-2"></i>Horarios: Ma/Ju 20:00-21:30</p>
+                                        <p class="mb-1"><i class="bi bi-person me-2"></i>Trainer: Alejandro Gómez</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rest of your existing table section -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="text-center mb-4">Horarios de Clases</h3>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Hora</th>
+                                    <th>Lunes</th>
+                                    <th>Martes</th>
+                                    <th>Miércoles</th>
+                                    <th>Jueves</th>
+                                    <th>Viernes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>09:00-10:00</td>
+                                    <td>Spinning<br><small>Juan Pérez</small></td>
+                                    <td>Yoga<br><small>Ana Silva</small></td>
+                                    <td>Spinning<br><small>Juan Pérez</small></td>
+                                    <td>Funcional<br><small>Pedro Sánchez</small></td>
+                                    <td>Spinning<br><small>Juan Pérez</small></td>
+                                </tr>
+                                <!-- Agrega más filas siguiendo el mismo formato -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="footer bg-dark text-white pt-5">
         <div class="container">
             <!-- Main Footer Content -->

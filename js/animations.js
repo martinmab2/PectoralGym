@@ -289,5 +289,39 @@ $(document).ready(function() {
     // Check on scroll and initial load
     $(window).on('scroll', checkCounterVisibility);
     checkCounterVisibility();
-});
 
+    // Inicializar Masonry
+    function initMasonry() {
+        $('#classes-gallery').imagesLoaded(function() {
+            $('#classes-gallery').masonry({
+                itemSelector: '.class-item:not(.hide)',
+                columnWidth: '.class-item:not(.hide)',
+                percentPosition: true
+            });
+        });
+    }
+    
+    // Sistema de filtros simplificado
+    $(document).ready(function() {
+        // Manejar clicks en los botones de filtro
+        $('.filter-btn').click(function() {
+            // Cambiar estilos de los botones
+            $('.filter-btn').removeClass('btn-primary').addClass('btn-outline-primary');
+            $(this).removeClass('btn-outline-primary').addClass('btn-primary');
+            
+            // Obtener el valor del filtro
+            var filter = $(this).data('filter');
+            
+            // Mostrar/ocultar elementos
+            if (filter == 'all') {
+                $('.class-item').show();
+            } else {
+                $('.class-item').hide();
+                $('.class-item[data-category="' + filter + '"]').show();
+            }
+        });
+
+        // Activar el botón "Todas" por defecto
+        $('.filter-btn[data-filter="all"]').click();
+    });
+});
