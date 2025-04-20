@@ -63,7 +63,7 @@ Desarrollar un sitio web funcional que sea:
 3. Abre el archivo `index.html`
 
 ### **Opcion 2: Probar el deploy o despliegue en GitHub Pages**
--Explora el proyecto a traves del siguiente enlace: ____________________
+-Explora el proyecto a traves del siguiente enlace: [(https://martinmab2.github.io/PectoralGym/)]
 
 
 ---
