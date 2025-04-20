@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description"
+        content="Prototipo web de PectoralGYM, diseño responsivo, animaciones modernas y componentes interactivos para gimnasios." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>PectoralGYM</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><i class="bi bi-gem"></i>PectoralGYM<i class="bi bi-gem"></i></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="btn btn-dark">
+                            <a class="nav-link active" href="index.html"><i class="bi bi-house-door-fill me-1"></i>Inicio</a>
+                        </li>
+                        <li class="btn btn-dark">
+                            <a class="nav-link active" href="blog.html"><i class="bi bi-journal-text me-1"></i>Blog</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <div class="dropdown w-100">
+                                <button class="btn btn-dark dropdown w-100" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link active" href="clases.html"><i class="bi bi-calendar2-week me-1"></i>Clases</a>
+                                </button>
+                                <ul class="dropdown-menu w-100">
+                                    <li><a class="dropdown-item text-center" href="clases.html"><i class="bi bi-bicycle me-1"></i>Spinning</a></li>
+                                    <li><a class="dropdown-item text-center" href="clases.html"><i class="bi bi-peace me-1"></i>Yoga</a></li>
+                                    <li><a class="dropdown-item text-center" href="clases.html"><i class="bi bi-lightning me-1"></i>Funcional</a></li>
+                                    <li><a class="dropdown-item text-center" href="clases.html"><i class="bi bi-trophy me-1"></i>Kick-Boxing</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="btn btn-dark">
+                            <a class="nav-link active" href="entrenadores.html"><i class="bi bi-people-fill me-1"></i>Entrenadores</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <div class="dropdown w-100">
+                                <button class="btn btn-dark dropdown w-100" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="nav-link active" href="precios.html"><i class="bi bi-tag-fill me-1"></i>Precios</a>
+                                </button>
+                                <ul class="dropdown-menu w-100">
+                                    <li><a class="dropdown-item text-center" href="precios.html"><i class="bi bi-star-fill me-1"></i>Plan GymRat</a></li>
+                                    <li><a class="dropdown-item text-center" href="precios.html"><i class="bi bi-star-half me-1"></i>Plan Medium</a></li>
+                                    <li><a class="dropdown-item text-center" href="precios.html"><i class="bi bi-star me-1"></i>Plan Gymbro</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="btn btn-dark">
+                            <a class="nav-link active" href="contacto.html"><i class="bi bi-envelope-fill me-1"></i>Contacto</a>
+                        </li>
+                        <li class="nav-item ms-2 d-flex align-items-center">
+                            <div class="theme-toggle">
+                                <input type="checkbox" class="btn-check" id="darkmode-toggle" autocomplete="off">
+                                <label class="btn btn-outline-light btn-sm" for="darkmode-toggle">
+                                    <i class="bi bi-moon-stars-fill"></i>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero position-relative overflow-hidden">
+        <div class="video-container">
+            <video autoplay muted loop class="hero-video">
+                <source src="assets/videos/hero_index.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="overlay"></div>
+        <div class="hero-content container position-relative">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-8 text-white text-center text-lg-start">
+                    <h1 class="display-1 fw-bold hero-title mb-4">PectoralGYM</h1>
+                    <p class="lead hero-text mb-5">Transforma tu cuerpo, fortalece tu mente</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-classes py-5" aria-labelledby="featured-classes-title">
+        <div class="container">
+            <h2 id="featured-classes-title" class="text-center mb-5 display-4">Clases Destacadas</h2>
+            
+            <div class="row g-4">
+                <!-- Spinning Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card class-card h-100">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="assets/img/spinning.jpg" class="card-img-top" alt="Clase de Spinning">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title h4">
+                                <i class="bi bi-bicycle me-2"></i>Spinning
+                            </h3>
+                            <p class="card-text">Cardio intenso con música motivadora. Quema calorías y mejora tu resistencia.</p>
+                            <a href="clases.html" class="btn btn-primary stretched-link">Ver Clase</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yoga Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card class-card h-100">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="assets/img/yoga.jpg" class="card-img-top" alt="Clase de Yoga">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title h4">
+                                <i class="bi bi-peace me-2"></i>Yoga
+                            </h3>
+                            <p class="card-text">Encuentra equilibrio y flexibilidad. Conecta mente y cuerpo.</p>
+                            <a href="clases.html" class="btn btn-primary stretched-link">Ver Clase</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Funcional Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card class-card h-100">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="assets/img/funcional.jpg" class="card-img-top" alt="Entrenamiento Funcional">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title h4">
+                                <i class="bi bi-lightning me-2"></i>Funcional
+                            </h3>
+                            <p class="card-text">Entrenamiento dinámico que mejora tu fuerza y movilidad.</p>
+                            <a href="clases.html" class="btn btn-primary stretched-link">Ver Clase</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kick-Boxing Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card class-card h-100">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="assets/img/kickboxing.jpg" class="card-img-top" alt="Clase de Kick-Boxing">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title h4">
+                                <i class="bi bi-trophy me-2"></i>Kick-Boxing
+                            </h3>
+                            <p class="card-text">Combina técnicas de boxeo y artes marciales para un entrenamiento completo.</p>
+                            <a href="clases.html" class="btn btn-primary stretched-link">Ver Clase</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="counter-section py-5 bg-dark text-white" aria-labelledby="counter-heading">
+        <div class="container">
+            <h2 id="counter-heading" class="text-center mb-5">Nuestros Números</h2>
+            
+            <div class="row text-center g-4">
+                <div class="col-6 col-md-3">
+                    <div class="counter-item">
+                        <i class="bi bi-people-fill display-4 mb-3 text-primary"></i>
+                        <h3 class="counter mb-2" data-target="1500">0</h3>
+                        <p class="text-muted">Socios Activos</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="counter-item">
+                        <i class="bi bi-star-fill display-4 mb-3 text-warning"></i>
+                        <h3 class="counter mb-2" data-target="950">0</h3>
+                        <p class="text-muted">Opiniones Positivas</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="counter-item">
+                        <i class="bi bi-calendar-check display-4 mb-3 text-success"></i>
+                        <h3 class="counter mb-2" data-target="3650">0</h3>
+                        <p class="text-muted">Clases Realizadas</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="counter-item">
+                        <i class="bi bi-trophy display-4 mb-3 text-danger"></i>
+                        <h3 class="counter mb-2" data-target="125">0</h3>
+                        <p class="text-muted">Premios Recibidos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials py-5 bg-dark text-white mb-5" aria-labelledby="testimonials-heading">
+        <div class="container">
+            <h2 id="testimonials-heading" class="text-center mb-5">Lo que dicen nuestros clientes</h2>
+            
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="testimonial-card text-center mx-auto" style="max-width: 600px;">
+                                <img src="assets/img/perfil2.jpg" 
+                                     class="rounded-circle mx-auto mb-4" 
+                                     alt="Foto de María García"
+                                     width="120" height="120">
+                                <blockquote class="blockquote">
+                                    <p class="mb-0">"PectoralGym cambió mi vida. Los entrenadores son excepcionales y el ambiente es increíble."</p>
+                                </blockquote>
+                                <div class="testimonial-author mt-3">
+                                    <h5 class="mb-1">María García</h5>
+                                    <p class="text-muted mb-0">Profesora de Yoga | Cliente desde 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="testimonial-card text-center mx-auto" style="max-width: 600px;">
+                                <img src="assets/img/perfil1.jpg" 
+                                     class="rounded-circle mx-auto mb-4" 
+                                     alt="Foto de Juan Pérez"
+                                     width="120" height="120">
+                                <blockquote class="blockquote">
+                                    <p class="mb-0">"Excelentes instalaciones y un equipo muy profesional. Los resultados hablan por sí solos."</p>
+                                </blockquote>
+                                <div class="testimonial-author mt-3">
+                                    <h5 class="mb-1">Juan Pérez</h5>
+                                    <p class="text-muted mb-0">Empresario | Cliente desde 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="testimonial-card text-center mx-auto" style="max-width: 600px;">
+                                <img src="assets/img/perfil3.jpg" 
+                                     class="rounded-circle mx-auto mb-4" 
+                                     alt="Foto de Ana Martínez"
+                                     width="120" height="120">
+                                <blockquote class="blockquote">
+                                    <p class="mb-0">"La variedad de clases y la flexibilidad de horarios hacen que sea perfecto para mi rutina."</p>
+                                </blockquote>
+                                <div class="testimonial-author mt-3">
+                                    <h5 class="mb-1">Ana Martínez</h5>
+                                    <p class="text-muted mb-0">Médica | Cliente desde 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-dark text-white pt-5">
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="row gy-4 pb-5">
+                <div class="col-12 col-lg-12 mb-4">
+                    <h3 class="text-center">PectoralGYM</h3>
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <form id="newsletter-form" class="needs-validation" novalidate>
+                                <div class="input-group input-group-lg gap-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required aria-label="Nombre para newsletter">
+                                        <label for="nombre">Tu nombre</label>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa tu nombre
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Tu email" required aria-label="Email para newsletter">
+                                        <label for="email">Tu email</label>
+                                        <div class="invalid-feedback">
+                                            Por favor ingresa un email válido
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="btn btn-primary px-4" type="submit" id="newsletter-submit">
+                                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                        <span class="button-text">Suscribir</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <h4 class="text-center">Ubicación</h4>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación del gimnasio"></iframe>
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <h4 class="text-center mb-4">Sedes y Horarios</h4>
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <!-- Sede Central -->
+                        <div class="col">
+                            <div class="card bg-dark text-white border-secondary h-100">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title border-bottom border-secondary pb-2">
+                                        <i class="bi bi-building me-2"></i>Sede Central
+                                    </h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt me-2"></i>Av. Corrientes 1234
+                                    </p>
+                                    <p class="card-text">
+                                        <i class="bi bi-telephone me-2"></i>(011) 4567-8900
+                                    </p>
+                                    <div class="mt-3">
+                                        <h6 class="border-bottom border-secondary pb-2">Horarios</h6>
+                                        <ul class="list-unstyled">
+                                            <li>Lun a Vie: 7:00 - 22:00</li>
+                                            <li>Sáb: 9:00 - 20:00</li>
+                                            <li>Dom: 9:00 - 14:00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-dark text-white border-secondary h-100">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title border-bottom border-secondary pb-2">
+                                        <i class="bi bi-building me-2"></i>Sede Norte
+                                    </h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt me-2"></i>Av. Libertador 5678
+                                    </p>
+                                    <p class="card-text">
+                                        <i class="bi bi-telephone me-2"></i>(011) 4567-8901
+                                    </p>
+                                    <div class="mt-3">
+                                        <h6 class="border-bottom border-secondary pb-2">Horarios</h6>
+                                        <ul class="list-unstyled">
+                                            <li>Lun a Vie: 6:00 - 23:00</li>
+                                            <li>Sáb: 8:00 - 21:00</li>
+                                            <li>Dom: 9:00 - 15:00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-dark text-white border-secondary h-100">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title border-bottom border-secondary pb-2">
+                                        <i class="bi bi-building me-2"></i>Sede Sur
+                                    </h5>
+                                    <p class="card-text">
+                                        <i class="bi bi-geo-alt me-2"></i>Av. Rivadavia 9012
+                                    </p>
+                                    <p class="card-text">
+                                        <i class="bi bi-telephone me-2"></i>(011) 4567-8902
+                                    </p>
+                                    <div class="mt-3">
+                                        <h6 class="border-bottom border-secondary pb-2">Horarios</h6>
+                                        <ul class="list-unstyled">
+                                            <li>Lun a Vie: 7:00 - 22:00</li>
+                                            <li>Sáb: 9:00 - 20:00</li>
+                                            <li>Dom: 9:00 - 14:00</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-top border-secondary pt-4 pb-3">
+                <div class="col-12 text-center mb-3">
+                    <h4 class="text-center mb-4">Síguenos en nuestras redes sociales</h4>
+                    <div class="social-links d-flex justify-content-center flex-wrap gap-4">
+                        <a href="https://facebook.com" class="social-link text-white text-decoration-none" aria-label="Síguenos en Facebook">
+                            <i class="bi bi-facebook fs-4 me-2"></i>
+                            <span>PECTORALGYMOFICIAL</span>
+                        </a>
+                        <a href="https://instagram.com" class="social-link text-white text-decoration-none" aria-label="Síguenos en Instagram">
+                            <i class="bi bi-instagram fs-4 me-2"></i>
+                            <span>PECTORALGYM.FIT</span>
+                        </a>
+                        <a href="https://youtube.com" class="social-link text-white text-decoration-none" aria-label="Síguenos en YouTube">
+                            <i class="bi bi-youtube fs-4 me-2"></i>
+                            <span>PECTOGYM_TV</span>
+                        </a>
+                        <a href="https://x.com" class="social-link text-white text-decoration-none" aria-label="Síguenos en X (Twitter)">
+                            <i class="bi bi-twitter-x fs-4 me-2"></i>
+                            <span>PeCtOrAlGyM_AR</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row border-secondary">
+                <div class="col-12 text-center py-3">
+                    <small>
+                        &copy; 2024 PectoralGYM. Desarrollado por
+                        <a class="social-link text-white text-decoration-none" aria-label="Martin Alejandro Bonari">
+                            <span>MARTIN ALEJANDRO BONARI</span>
+                        </a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js" defer></script>
+</body>
+
+</html>
