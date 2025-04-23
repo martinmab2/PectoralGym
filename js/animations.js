@@ -1,15 +1,25 @@
 $(document).ready(function() {
     // Animaciones del navbar
+    $('.navbar-brand').css({
+        'opacity': '0',
+        'transform': 'translateX(80px)',
+        'transition': 'all 1.2s cubic-bezier(0.4,0,0.2,1)' // Duración aumentada
+    });
+    setTimeout(function() {
+        $('.navbar-brand').css({
+            'opacity': '1',
+            'transform': 'translateX(0)',
+            'transition': 'all 1.2s cubic-bezier(0.4,0,0.2,1)' // Duración aumentada
+        });
+    }, 600); // Retraso ligeramente mayor
+
     $('.navbar-brand').hover(
         function() {
-            // Mouse enter
             $(this).css({
                 'opacity': '0.8',
                 'transform': 'scale(1.1) translateY(-2px)',
                 'transition': 'all 0.3s ease'
             });
-            
-            // Animar los iconos
             $(this).find('i').css({
                 'color': '#ffd700',
                 'transform': 'rotate(360deg)',
@@ -17,14 +27,11 @@ $(document).ready(function() {
             });
         },
         function() {
-            // Mouse leave
             $(this).css({
                 'opacity': '1',
                 'transform': 'scale(1) translateY(0)',
                 'transition': 'all 0.3s ease'
             });
-            
-            // Restaurar los iconos
             $(this).find('i').css({
                 'color': 'white',
                 'transform': 'rotate(0deg)',
@@ -33,76 +40,53 @@ $(document).ready(function() {
         }
     );
 
-    // Common text styles for hero elements
+    // Hero styles y animaciones
     function initializeHeroStyles() {
         const $heroTitle = $('.hero-title');
         const $heroText = $('.hero-text');
-
-        // Common text styles
         const textStyles = {
             'font-family': "'Bebas Neue', sans-serif",
             'letter-spacing': '3px',
             'font-weight': '700',
             'text-transform': 'uppercase'
         };
-
-        // Apply common styles
         $heroTitle.css(textStyles);
         $heroText.css(textStyles);
-
-        // Initial state
+        // Animación desde la derecha
         $heroTitle.css({
             'opacity': '0',
-            'transform': 'translateY(30px)',
+            'transform': 'translateX(80px) scale(0.95)',
             'text-shadow': 'none'
         });
-        
         $heroText.css({
             'opacity': '0',
-            'transform': 'translateY(20px)',
+            'transform': 'translateX(80px) scale(0.95)',
             'text-shadow': 'none'
         });
-
-        // Animate title with enhanced effects
         setTimeout(() => {
             $heroTitle.css({
                 'opacity': '1',
-                'transform': 'translateY(0)',
-                'transition': 'all 1s ease',
-                'animation': 'titlePulse 3s infinite',
+                'transform': 'translateX(0) scale(1)',
+                'transition': 'all 1.6s cubic-bezier(0.4,0,0.2,1)', // Duración aumentada
                 'text-shadow': '0 0 10px rgba(255, 215, 0, 0.7), 0 0 20px rgba(255, 215, 0, 0.5)'
             });
-        }, 500);
-
-        // Animate subtitle with enhanced effects
+        }, 700); // Retraso mayor
         setTimeout(() => {
             $heroText.css({
                 'opacity': '1',
-                'transform': 'translateY(0)',
-                'transition': 'all 0.8s ease',
-                'animation': 'textFloat 4s infinite ease-in-out',
+                'transform': 'translateX(0) scale(1)',
+                'transition': 'all 1.2s cubic-bezier(0.4,0,0.2,1)', // Duración aumentada
                 'text-shadow': '0 0 15px rgba(255, 255, 255, 0.8)'
             });
-
-            // Add floating animation
-            setInterval(() => {
-                $heroText.animate({
-                    'opacity': '0.8'
-                }, 1000).animate({
-                    'opacity': '1'
-                }, 1000);
-            }, 2000);
-        }, 1000);
+        }, 1200); // Retraso mayor
     }
-
-    // Call animation on page load
     initializeHeroStyles();
 
-    // Enhanced hover effects
+    // Hover hero
     $('.hero-title').hover(
         function() {
             $(this).css({
-                'transform': 'scale(1.1)',
+                'transform': 'scale(1.08)', // Reduce el zoom para evitar corte
                 'text-shadow': '0 0 20px rgba(255, 215, 0, 0.9), 0 0 30px rgba(255, 215, 0, 0.7)',
                 'color': '#ffd700',
                 'transition': 'all 0.3s ease'
@@ -117,7 +101,6 @@ $(document).ready(function() {
             });
         }
     );
-
     $('.hero-text').hover(
         function() {
             $(this).css({
@@ -137,123 +120,126 @@ $(document).ready(function() {
         }
     );
 
-    // Smooth scroll for anchor links
+    // Smooth scroll para anchors internos
     $('a[href^="#"]').on('click', function(e) {
-        e.preventDefault();
-        const target = $(this.hash);
-        $('html, body').animate({
-            scrollTop: target.offset().top
-        }, 1000, 'easeOutExpo');
-    });
-
-    // Testimonial Carousel Configuration
-    $('#testimonialCarousel').carousel({
-        interval: 5000, // Time between slides
-        pause: 'hover' // Pause on mouse hover
-    });
-
-    // Add fade effect when switching testimonials
-    $('#testimonialCarousel').on('slide.bs.carousel', function (e) {
-        const $nextSlide = $(e.relatedTarget).find('.testimonial-card');
-        
-        $nextSlide.css({
-            'opacity': '0',
-            'transform': 'translateY(20px)'
-        });
-        
-        setTimeout(function() {
-            $nextSlide.css({
-                'opacity': '1',
-                'transform': 'translateY(0)'
-            });
-        }, 100);
-    });
-
-    // Featured Classes Card Animations
-    $('.class-card').hover(
-        function() {
-            $(this).stop().animate({
-                transform: 'translateY(-10px)'
-            }, 200);
-            
-            // Scale up image
-            $(this).find('.card-img-top').css({
-                'transform': 'scale(1.1)',
-                'transition': 'transform 0.3s ease'
-            });
-
-            // Add glow effect
-            $(this).css({
-                'box-shadow': '0 5px 15px rgba(255, 215, 0, 0.4)',
-                'transition': 'all 0.3s ease'
-            });
-
-            // Animate icon
-            $(this).find('.bi').css({
-                'color': '#ffd700',
-                'transform': 'rotateY(360deg)',
-                'transition': 'all 0.5s ease'
-            });
-        },
-        function() {
-            $(this).stop().animate({
-                transform: 'translateY(0)'
-            }, 200);
-            
-            // Reset image scale
-            $(this).find('.card-img-top').css({
-                'transform': 'scale(1)',
-                'transition': 'transform 0.3s ease'
-            });
-
-            // Remove glow effect
-            $(this).css({
-                'box-shadow': 'none',
-                'transition': 'all 0.3s ease'
-            });
-
-            // Reset icon
-            $(this).find('.bi').css({
-                'color': 'inherit',
-                'transform': 'rotateY(0deg)',
-                'transition': 'all 0.5s ease'
-            });
+        var target = $(this.hash);
+        if (target.length) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
         }
-    );
+    });
 
-    // Fade in cards on scroll
+    // Testimonial Carousel (si existe)
+    if ($('#testimonialCarousel').length) {
+        $('#testimonialCarousel').carousel({
+            interval: 5000,
+            pause: 'hover'
+        });
+        $('#testimonialCarousel').on('slide.bs.carousel', function (e) {
+            const $nextSlide = $(e.relatedTarget).find('.testimonial-card');
+            $nextSlide.css({
+                'opacity': '0',
+                'transform': 'translateY(20px)'
+            });
+            setTimeout(function() {
+                $nextSlide.css({
+                    'opacity': '1',
+                    'transform': 'translateY(0)'
+                });
+            }, 100);
+        });
+    }
+
+    // Animación de tarjetas de clases (usa .class-item en vez de .class-card)
+    $('.class-item').css({
+        'opacity': '0',
+        'transform': 'translateY(20px)',
+        'transition': 'all 0.5s ease'
+    });
     function revealCards() {
-        $('.class-card').each(function(i) {
+        $('.class-item').each(function() {
             const cardPosition = $(this).offset().top;
             const scrollPosition = $(window).scrollTop();
             const windowHeight = $(window).height();
-
             if (scrollPosition > cardPosition - windowHeight + 100) {
                 $(this).css({
                     'opacity': '1',
-                    'transform': 'translateY(0)',
-                    'transition': 'all 0.5s ease'
+                    'transform': 'translateY(0)'
                 });
             }
         });
     }
-
-    // Initial state for cards
-    $('.class-card').css({
-        'opacity': '0',
-        'transform': 'translateY(20px)'
-    });
-
-    // Call on scroll and load
     $(window).on('scroll load', revealCards);
+
+    // Hover animación para tarjetas de clases
+    $('.class-item').hover(
+        function() {
+            $(this).css({
+                'transform': 'translateY(-10px) scale(1.03)',
+                'box-shadow': '0 5px 15px rgba(255, 215, 0, 0.4)',
+                'transition': 'all 0.3s ease'
+            });
+            $(this).find('.card-img-top').css({
+                'transform': 'scale(1.07)',
+                'transition': 'transform 0.3s ease'
+            });
+        },
+        function() {
+            $(this).css({
+                'transform': 'translateY(0) scale(1)',
+                'box-shadow': 'none',
+                'transition': 'all 0.3s ease'
+            });
+            $(this).find('.card-img-top').css({
+                'transform': 'scale(1)',
+                'transition': 'transform 0.3s ease'
+            });
+        }
+    );
+
+    // Filtro de clases
+    const $items = $('.class-item');
+    const $checkboxes = $('.filter-checkbox');
+    function handleFilters() {
+        const checkedFilters = $checkboxes
+            .filter(':checked')
+            .map(function() { return $(this).val(); })
+            .get();
+        if (checkedFilters.length === 0 || checkedFilters.includes('all')) {
+            $items.show();
+            $('#filter-all').prop('checked', true);
+            $checkboxes.not('#filter-all').prop('checked', false);
+            return;
+        }
+        $items.hide();
+        $items.each(function() {
+            const itemCategory = $(this).data('category');
+            if (checkedFilters.includes(itemCategory)) {
+                $(this).show();
+            }
+        });
+    }
+    $checkboxes.on('change', function() {
+        const $this = $(this);
+        if ($this.val() === 'all' && $this.is(':checked')) {
+            $checkboxes.not($this).prop('checked', false);
+        } else if ($this.val() !== 'all') {
+            $('#filter-all').prop('checked', false);
+        }
+        handleFilters();
+    });
+    // Inicializar filtros
+    $('#filter-all').prop('checked', true);
+    $checkboxes.not('#filter-all').prop('checked', false);
+    handleFilters();
 
     // Counter Animation
     function startCounterAnimation() {
         $('.counter').each(function() {
             const $this = $(this);
             const target = parseInt($this.data('target'));
-            
-            // Only start if counter hasn't been animated yet
             if (!$this.hasClass('counted')) {
                 $({ Counter: 0 }).animate({
                     Counter: target
@@ -272,56 +258,23 @@ $(document).ready(function() {
         });
     }
 
-    // Start counter when section is in viewport
+    // Start counter when section is in viewport or on load
     function checkCounterVisibility() {
-        const counterSection = $('.counter-section');
+        const $counterSection = $('.counter-section');
+        if ($counterSection.length === 0) return;
         const windowHeight = $(window).height();
         const scrollTop = $(window).scrollTop();
-        const offsetTop = counterSection.offset().top;
-
-        if (scrollTop + windowHeight > offsetTop + 100) {
+        const offsetTop = $counterSection.offset().top;
+        // Si la sección está visible o la página acaba de cargar
+        if (scrollTop + windowHeight > offsetTop + 100 || scrollTop === 0) {
             startCounterAnimation();
-            // Remove scroll listener once animation has started
             $(window).off('scroll', checkCounterVisibility);
         }
     }
 
-    // Check on scroll and initial load
+    // Llama siempre al cargar y al hacer scroll
     $(window).on('scroll', checkCounterVisibility);
     checkCounterVisibility();
 
-    // Inicializar Masonry
-    function initMasonry() {
-        $('#classes-gallery').imagesLoaded(function() {
-            $('#classes-gallery').masonry({
-                itemSelector: '.class-item:not(.hide)',
-                columnWidth: '.class-item:not(.hide)',
-                percentPosition: true
-            });
-        });
-    }
-    
-    // Sistema de filtros simplificado
-    $(document).ready(function() {
-        // Manejar clicks en los botones de filtro
-        $('.filter-btn').click(function() {
-            // Cambiar estilos de los botones
-            $('.filter-btn').removeClass('btn-primary').addClass('btn-outline-primary');
-            $(this).removeClass('btn-outline-primary').addClass('btn-primary');
-            
-            // Obtener el valor del filtro
-            var filter = $(this).data('filter');
-            
-            // Mostrar/ocultar elementos
-            if (filter == 'all') {
-                $('.class-item').show();
-            } else {
-                $('.class-item').hide();
-                $('.class-item[data-category="' + filter + '"]').show();
-            }
-        });
-
-        // Activar el botón "Todas" por defecto
-        $('.filter-btn[data-filter="all"]').click();
-    });
+    // ...elimina Masonry si no tienes #classes-gallery, o adapta el selector...
 });

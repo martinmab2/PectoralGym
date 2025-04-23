@@ -78,53 +78,67 @@
     </section>
     <section class="classes-section py-5">
         <div class="container">
-            <!-- Filtros (mantener los existentes) -->
+            <!-- Título de la galería -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h3 class="display-4 fw-bold text-warning mb-3">Nuestras Clases</h3>
+                    <p class="lead text-secondary fw-light px-3 px-md-5 mx-auto" style="max-width: 800px;">
+                        Explora nuestra variedad de clases y encuentra la que mejor se adapte a ti
+                    </p>
+                </div>
+            </div>
+
+            <!-- Filtros -->
             <div class="row mb-4">
                 <div class="col-12">
-                    <div class="filter-buttons d-flex flex-wrap justify-content-center gap-2 mb-4">
-                        <button type="button" class="btn btn-primary filter-btn" data-filter="all">
-                            Todas
-                        </button>
-                        <button type="button" class="btn btn-outline-primary filter-btn" data-filter="cardio">
-                            Cardio
-                        </button>
-                        <button type="button" class="btn btn-outline-primary filter-btn" data-filter="fuerza">
-                            Fuerza
-                        </button>
-                        <button type="button" class="btn btn-outline-primary filter-btn" data-filter="flexibilidad">
-                            Flexibilidad
-                        </button>
-                        <button type="button" class="btn btn-outline-primary filter-btn" data-filter="combate">
-                            Combate
-                        </button>
+                    <div class="bg-dark p-4 rounded-3 shadow">
+                        <div class="d-flex flex-wrap justify-content-center gap-3 mb-0">
+                            <div class="form-check form-check-inline bg-transparent">
+                                <input class="form-check-input filter-checkbox" type="checkbox" id="filter-all" value="all" checked>
+                                <label class="form-check-label text-white" for="filter-all">Todas</label>
+                            </div>
+                            <div class="form-check form-check-inline bg-transparent">
+                                <input class="form-check-input filter-checkbox" type="checkbox" id="filter-cardio" value="cardio">
+                                <label class="form-check-label text-white" for="filter-cardio">Cardio</label>
+                            </div>
+                            <div class="form-check form-check-inline bg-transparent">
+                                <input class="form-check-input filter-checkbox" type="checkbox" id="filter-fuerza" value="fuerza">
+                                <label class="form-check-label text-white" for="filter-fuerza">Fuerza</label>
+                            </div>
+                            <div class="form-check form-check-inline bg-transparent">
+                                <input class="form-check-input filter-checkbox" type="checkbox" id="filter-flexibilidad" value="flexibilidad">
+                                <label class="form-check-label text-white" for="filter-flexibilidad">Flexibilidad</label>
+                            </div>
+                            <div class="form-check form-check-inline bg-transparent">
+                                <input class="form-check-input filter-checkbox" type="checkbox" id="filter-combate" value="combate">
+                                <label class="form-check-label text-white" for="filter-combate">Combate</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Nueva estructura para la galería masonry -->
-            <div class="row" id="classes-gallery">
-                <div class="masonry-grid">
-                    <!-- Cardio - HIIT -->
-                    <div class="class-item" data-category="cardio">
-                        <div class="card h-100 bg-dark text-white">
+            <!-- Galería -->
+            <div class="gallery-container">
+                <div class="row gallery">
+                    <!-- Cardio -->
+                    <div class="col-12 col-md-6 class-item" data-category="cardio">
+                        <div class="card text-white">
                             <div class="card-img-wrapper">
                                 <img src="assets/img/hiit.jpg" class="card-img-top" alt="Clase de HIIT">
-                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                <div class="card-img-overlay">
                                     <h5 class="card-title">HIIT</h5>
                                     <span class="badge bg-primary mb-2">Cardio</span>
-                                    <p class="card-text">Entrenamiento de alta intensidad por intervalos</p>
-                                    <div class="class-details mt-2">
+                                    <div class="class-details">
                                         <p class="mb-1"><i class="bi bi-clock me-2"></i>Lu/Mi/Vi 7:00-8:00</p>
-                                        <p class="mb-1"><i class="bi bi-person me-2"></i>Patricia Sánchez</p>
+                                        <p class="mb-0"><i class="bi bi-person me-2"></i>Patricia Sánchez</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Cardio - Spinning -->
-                    <div class="class-item" data-category="cardio">
-                        <div class="card h-100 bg-dark text-white">
+                    <div class="col-12 col-md-4 class-item" data-category="cardio">
+                        <div class="card text-white">
                             <div class="card-img-wrapper">
                                 <img src="assets/img/spinning.jpg" class="card-img-top" alt="Clase de Spinning">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -139,10 +153,10 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Fuerza - CrossFit -->
-                    <div class="class-item" data-category="fuerza">
-                        <div class="card h-100 bg-dark text-white">
+                    
+                    <!-- Fuerza -->
+                    <div class="col-12 col-md-2 class-item" data-category="fuerza">
+                        <div class="card text-white">
                             <div class="card-img-wrapper">
                                 <img src="assets/img/crossfit.jpg" class="card-img-top" alt="Clase de CrossFit">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -157,10 +171,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Fuerza - Pesas -->
-                    <div class="class-item" data-category="fuerza">
-                        <div class="card h-100 bg-dark text-white">
+                    <div class="col-12 col-md-4 class-item" data-category="fuerza">
+                        <div class="card text-white">
                             <div class="card-img-wrapper">
                                 <img src="assets/img/levantamientodepesas.jpg" class="card-img-top" alt="Clase de Levantamiento de Pesas">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -175,10 +187,10 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Flexibilidad - Yoga -->
-                    <div class="class-item" data-category="flexibilidad">
-                        <div class="card h-100 bg-dark text-white">
+                    
+                    <!-- Flexibilidad -->
+                    <div class="col-12 col-md-5 class-item" data-category="flexibilidad">
+                        <div class="card text-white">
                             <div class="card-img-wrapper">
                                 <img src="assets/img/yoga.jpg" class="card-img-top" alt="Clase de Yoga">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -193,10 +205,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Flexibilidad - Pilates -->
-                    <div class="class-item" data-category="flexibilidad">
-                        <div class="card h-100 bg-dark text-white">
+                    <div class="col-12 col-md-3 class-item" data-category="flexibilidad">
+                        <div class="card text-white">
                             <div class="card-img-wrapper">
                                 <img src="assets/img/pilates.jpg" class="card-img-top" alt="Clase de Pilates">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -211,10 +221,10 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Combate - Boxeo -->
-                    <div class="class-item" data-category="combate">
-                        <div class="card h-100 bg-dark text-white">
+                    
+                    <!-- Combate -->
+                    <div class="col-12 col-md-4 class-item" data-category="combate">
+                        <div class="card text-white">
                             <div class="card-img-wrapper">
                                 <img src="assets/img/boxeo.jpg" class="card-img-top" alt="Clase de Boxeo">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -229,10 +239,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Combate - Kickboxing -->
-                    <div class="class-item" data-category="combate">
-                        <div class="card h-100 bg-dark text-white">
+                    <div class="col-12 col-md-8 class-item" data-category="combate">
+                        <div class="card text-white">
                             <div class="card-img-wrapper">
                                 <img src="assets/img/kickboxing.jpg" class="card-img-top" alt="Clase de Kickboxing">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -250,8 +258,9 @@
                 </div>
             </div>
 
-            <!-- Rest of your existing table section -->
-            <div class="row mt-5">
+            <!-- Tabla de horarios -->
+            
+            <div class="row mt-4">
                 <div class="col-12">
                     <h3 class="text-center mb-4">Horarios de Clases</h3>
                     <div class="table-responsive">
@@ -268,14 +277,53 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>09:00-10:00</td>
+                                    <td>07:00-08:00</td>
+                                    <td>HIIT<br><small>Patricia Sánchez</small></td>
+                                    <td>CrossFit<br><small>Miguel Torres</small></td>
+                                    <td>HIIT<br><small>Patricia Sánchez</small></td>
+                                    <td>CrossFit<br><small>Miguel Torres</small></td>
+                                    <td>HIIT<br><small>Patricia Sánchez</small></td>
+                                </tr>
+                                <tr>
+                                    <td>08:00-09:00</td>
+                                    <td>Pilates<br><small>Laura Martínez</small></td>
+                                    <td>Spinning<br><small>Carlos Ruiz</small></td>
+                                    <td>Pilates<br><small>Laura Martínez</small></td>
+                                    <td>Spinning<br><small>Carlos Ruiz</small></td>
+                                    <td>Pilates<br><small>Laura Martínez</small></td>
+                                </tr>
+                                <tr>
+                                    <td>09:00-10:30</td>
                                     <td>Spinning<br><small>Juan Pérez</small></td>
                                     <td>Yoga<br><small>Ana Silva</small></td>
                                     <td>Spinning<br><small>Juan Pérez</small></td>
-                                    <td>Funcional<br><small>Pedro Sánchez</small></td>
+                                    <td>Yoga<br><small>Ana Silva</small></td>
                                     <td>Spinning<br><small>Juan Pérez</small></td>
                                 </tr>
-                                <!-- Agrega más filas siguiendo el mismo formato -->
+                                <tr>
+                                    <td>10:00-11:30</td>
+                                    <td>Funcional<br><small>Pedro Sánchez</small></td>
+                                    <td>Pesas<br><small>Fernando López</small></td>
+                                    <td>Funcional<br><small>Pedro Sánchez</small></td>
+                                    <td>Pesas<br><small>Fernando López</small></td>
+                                    <td>Funcional<br><small>Pedro Sánchez</small></td>
+                                </tr>
+                                <tr>
+                                    <td>18:00-19:30</td>
+                                    <td>CrossFit<br><small>Miguel Torres</small></td>
+                                    <td>Boxeo<br><small>Roberto Díaz</small></td>
+                                    <td>CrossFit<br><small>Miguel Torres</small></td>
+                                    <td>Boxeo<br><small>Roberto Díaz</small></td>
+                                    <td>CrossFit<br><small>Miguel Torres</small></td>
+                                </tr>
+                                <tr>
+                                    <td>19:00-20:30</td>
+                                    <td>Boxeo<br><small>Roberto Díaz</small></td>
+                                    <td>Kickboxing<br><small>Alejandro Gómez</small></td>
+                                    <td>Boxeo<br><small>Roberto Díaz</small></td>
+                                    <td>Kickboxing<br><small>Alejandro Gómez</small></td>
+                                    <td>Boxeo<br><small>Roberto Díaz</small></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
