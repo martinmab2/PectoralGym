@@ -276,5 +276,37 @@ $(document).ready(function() {
     $(window).on('scroll', checkCounterVisibility);
     checkCounterVisibility();
 
-    // ...elimina Masonry si no tienes #classes-gallery, o adapta el selector...
+    // Trainer Cards Animation
+    $('.trainer-card').on('mouseenter', function() {
+        const $card = $(this);
+        const $progressBars = $card.find('.progress-bar');
+        
+        setTimeout(() => {
+            $progressBars.each(function() {
+                const percent = $(this).data('percent');
+                $(this).css('width', percent + '%');
+            });
+        }, 400);
+    });
+
+    $('.trainer-card').on('mouseleave', function() {
+        const $progressBars = $(this).find('.progress-bar');
+        $progressBars.css('width', '0%');
+    });
+
+    // Inicializar animaciones de las tarjetas de entrenadores
+    $('.trainer-card').each(function(index) {
+        $(this).css({
+            'opacity': '0',
+            'transform': 'translateY(30px)',
+            'transition': 'all 0.5s ease'
+        });
+        
+        setTimeout(() => {
+            $(this).css({
+                'opacity': '1',
+                'transform': 'translateY(0)'
+            });
+        }, 200 * (index + 1));
+    });
 });
