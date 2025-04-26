@@ -70,6 +70,92 @@
             </div>
         </nav>
     </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card bg-dark">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4 text-white">Contáctanos</h2>
+                        <form id="contactForm" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingresa tu nombre completo
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingresa un email válido
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono" name="telefono" 
+                                       pattern="[0-9]{10}" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingresa un número de teléfono válido (10 dígitos)
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="asunto" class="form-label">Asunto</label>
+                                <select class="form-select" id="asunto" name="asunto" required>
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="membresia">Membresía</option>
+                                    <option value="clases">Clases</option>
+                                    <option value="entrenamiento">Entrenamiento personalizado</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Por favor selecciona un asunto
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor ingresa tu mensaje
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary" type="submit">
+                                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                    <span class="button-text">Enviar mensaje</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de confirmación -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header border-secondary">
+                        <h5 class="modal-title" id="confirmationModalLabel">¡Mensaje enviado!</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo pronto.
+                    </div>
+                    <div class="modal-footer border-secondary">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <footer class="footer bg-dark text-white pt-5">
         <div class="container">
             <!-- Main Footer Content -->

@@ -702,3 +702,72 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
     color: #ffd700;
     text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
+
+/* Contact Form Styles */
+.form-control, .form-select {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #ffd700;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    color: #ffffff;
+}
+
+.form-select option {
+    background-color: #212529;
+    color: #ffffff;
+}
+
+.form-label {
+    color: #ffffff;
+}
+
+.invalid-feedback, 
+.valid-feedback {
+    color: #ffffff;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.form-floating > label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: #ffffff;
+}
+
+.modal-body {
+    color: #ffffff;
+}
+
+/* Make validation states more visible on dark background */
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    border-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.15);
+}
+
+.form-control.is-valid,
+.was-validated .form-control:valid {
+    border-color: #198754;
+    background-color: rgba(25, 135, 84, 0.15);
+}
+
+/* Modal custom styles */
+.modal-content {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}

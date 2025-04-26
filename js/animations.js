@@ -392,4 +392,61 @@ $(document).ready(function() {
         });
     });
 
+    // Form validation
+    const $contactForm = $('#contactForm');
+    const $submitButton = $contactForm.find('button[type="submit"]');
+    const $spinner = $submitButton.find('.spinner-border');
+    const $buttonText = $submitButton.find('.button-text');
+
+    // Real-time validation
+    $contactForm.find('input, textarea, select').on('input', function() {
+        const $field = $(this);
+        const isValid = $field[0].checkValidity();
+        
+        if ($field.val()) {
+            $field.removeClass('is-invalid').addClass(isValid ? 'is-valid' : 'is-invalid');
+        } else {
+            $field.removeClass('is-valid is-invalid');
+        }
+    });
+
+    // Phone number validation
+    $('#telefono').on('input', function() {
+        this.value = this.value.replace(/[^0-9]/g, '');
+        if (this.value.length > 10) {
+            this.value = this.value.slice(0, 10);
+        }
+    });
+
+    // Form submission
+    $contactForm.on('submit', function(e) {
+        e.preventDefault();
+        
+        if (!this.checkValidity()) {
+            e.stopPropagation();
+            $(this).addClass('was-validated');
+            return;
+        }
+
+        // Show spinner
+        $spinner.removeClass('d-none');
+        $buttonText.text('Enviando...');
+        $submitButton.prop('disabled', true);
+
+        // Simulate API call
+        setTimeout(() => {
+            // Hide spinner
+            $spinner.addClass('d-none');
+            $buttonText.text('Enviar mensaje');
+            $submitButton.prop('disabled', false);
+
+            // Reset form
+            $contactForm[0].reset();
+            $contactForm.removeClass('was-validated');
+            $contactForm.find('.is-valid').removeClass('is-valid');
+
+            // Show modal
+            $('#confirmationModal').modal('show');
+        }, 2000);
+    });
 }); // End of document.ready
