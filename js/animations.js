@@ -449,4 +449,227 @@ $(document).ready(function() {
             $('#confirmationModal').modal('show');
         }, 2000);
     });
+
+    // Blog Functionality
+    if ($('.tags-filter').length) {
+        // Scroll Reveal for Articles with stagger effect
+        function revealOnScroll() {
+            $('.article-card').each(function(index) {
+                const articleTop = $(this).offset().top;
+                const windowHeight = $(window).height();
+                const scrollY = $(window).scrollTop();
+                const revealPoint = 150;
+
+                if (articleTop < scrollY + windowHeight - revealPoint) {
+                    setTimeout(() => {
+                        $(this).addClass('revealed');
+                    }, index * 200); // Efecto stagger: cada artículo aparece 200ms después
+                }
+            });
+        }
+
+        // Initialize articles
+        $('.article-card').css({
+            'opacity': '0',
+            'transform': 'translateY(30px)',
+            'transition': 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+        });
+
+        // Check on load and scroll
+        $(window).on('load scroll', revealOnScroll);
+
+        // Utility function para generar colores de avatar
+        function getAvatarColor(name) {
+            let hash = 0;
+            for (let i = 0; i < name.length; i++) {
+                hash = name.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            const hue = Math.abs(hash % 360);
+            return `hsl(${hue}, 70%, 40%)`;
+        }
+
+        // Comments System
+        const comments = [
+            {
+                id: 1,
+                author: "María Marta del Milagro Juarez",
+                content: "¡Excelente artículo! Me encantó la información sobre nutrición deportiva.",
+                date: "2024-03-15",
+                likes: 8,
+                isLiked: false,
+                replies: [
+                    {
+                        id: "r1",
+                        author: "Carlos Ruiz",
+                        content: "¡Gracias María! Me alegro que te haya servido.",
+                        date: "2024-03-15",
+                        likes: 3,
+                        isLiked: false
+                    }
+                ]
+            },
+            {
+                id: 2,
+                author: "Martin Alejandro Bonari",
+                content: "Las rutinas de entrenamiento están muy bien explicadas. Voy a empezar a aplicarlas.",
+                date: "2024-03-14",
+                likes: 12,
+                isLiked: false,
+                replies: [
+                    {
+                        id: "r2",
+                        author: "Ana López",
+                        content: "¡Coincido totalmente! Ya las estoy implementando.",
+                        date: "2024-03-14",
+                        likes: 4,
+                        isLiked: false
+                    }
+                ]
+            },
+            {
+                id: 3,
+                author: "Fabrizio Luciano Armada",
+                content: "Excelente información sobre suplementación. Los consejos sobre creatina son muy útiles.",
+                date: "2024-03-13",
+                likes: 6,
+                isLiked: false,
+                replies: []
+            }
+        ];
+
+        function renderComments() {
+            const $container = $('.comments-container');
+            if ($container.length) {
+                $container.empty();
+                
+                comments.forEach(comment => {
+                    const avatarColor = getAvatarColor(comment.author);
+                    const heartIcon = comment.isLiked ? 'bi-heart-fill text-danger' : 'bi-heart';
+                    const $comment = $(`
+                        <div class="comment mb-4" data-comment-id="${comment.id}">
+                            <div class="d-flex">
+                                <div class="comment-avatar me-3" style="background-color: ${avatarColor}">
+                                    ${comment.author.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="mb-1">${comment.author}</h5>
+                                    <p class="mb-2">${comment.content}</p>
+                                    <div class="comment-actions mb-3">
+                                        <a class="like-btn" role="button"><i class="bi ${heartIcon}"></i> ${comment.likes}</a>
+                                        <a class="reply-btn ms-3" role="button"><i class="bi bi-reply"></i> Responder</a>
+                                        <small class="text-muted ms-3">${comment.date}</small>
+                                    </div>
+                                    ${comment.replies ? `
+                                        <div class="replies ms-4 border-start border-secondary ps-3">
+                                            ${comment.replies.map(reply => {
+                                                const replyAvatarColor = getAvatarColor(reply.author);
+                                                const replyHeartIcon = reply.isLiked ? 'bi-heart-fill text-danger' : 'bi-heart';
+                                                return `
+                                                    <div class="reply mb-3" data-reply-id="${reply.id}">
+                                                        <div class="d-flex align-items-start">
+                                                            <div class="comment-avatar me-2" style="background-color: ${replyAvatarColor}; width: 35px; height: 35px; font-size: 0.9rem;">
+                                                                ${reply.author.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="mb-1">${reply.author}</h6>
+                                                                <p class="mb-1 small">${reply.content}</p>
+                                                                <div class="reply-actions">
+                                                                    <a class="like-btn" role="button"><i class="bi ${replyHeartIcon}"></i> ${reply.likes}</a>
+                                                                    <small class="text-muted ms-3">${reply.date}</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                `;
+                                            }).join('')}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                    
+                    $container.append($comment);
+                });
+            }
+        }
+
+        // Initialize comments
+        renderComments();
+
+        // Comment Form Handler
+        $('#comment-form').on('submit', function(e) {
+            e.preventDefault();
+            const content = $('#comment-text').val().trim();
+            const replyToId = $(this).data('reply-to');
+            
+            if (content) {
+                if (replyToId) {
+                    const parentComment = comments.find(c => c.id === replyToId);
+                    if (parentComment) {
+                        if (!parentComment.replies) parentComment.replies = [];
+                        parentComment.replies.push({
+                            id: `r${Date.now()}`,
+                            author: "Usuario Actual",
+                            content: content.replace(`@${parentComment.author} `, ''),
+                            date: new Date().toLocaleDateString(),
+                            likes: 0,
+                            isLiked: false
+                        });
+                    }
+                    $(this).removeData('reply-to');
+                } else {
+                    comments.unshift({
+                        id: comments.length + 1,
+                        author: "Usuario Actual",
+                        content: content,
+                        date: new Date().toLocaleDateString(),
+                        likes: 0,
+                        isLiked: false
+                    });
+                }
+                
+                renderComments();
+                $('#comment-text').val('');
+            }
+        });
+
+        // Like functionality for both comments and replies
+        $(document).on('click', '.like-btn', function() {
+            const $comment = $(this).closest('.comment');
+            const $reply = $(this).closest('.reply');
+            
+            if ($reply.length) {
+                const commentId = $comment.data('comment-id');
+                const replyId = $reply.data('reply-id');
+                const comment = comments.find(c => c.id === commentId);
+                if (comment && comment.replies) {
+                    const reply = comment.replies.find(r => r.id === replyId);
+                    if (reply) {
+                        reply.isLiked = !reply.isLiked;
+                        reply.likes += reply.isLiked ? 1 : -1;
+                    }
+                }
+            } else {
+                const commentId = $comment.data('comment-id');
+                const comment = comments.find(c => c.id === commentId);
+                if (comment) {
+                    comment.isLiked = !comment.isLiked;
+                    comment.likes += comment.isLiked ? 1 : -1;
+                }
+            }
+            
+            renderComments();
+        });
+
+        // Reply functionality
+        $(document).on('click', '.reply-btn', function() {
+            const $comment = $(this).closest('.comment');
+            const author = $comment.find('h5').text();
+            const commentId = $comment.data('comment-id');
+            $('#comment-form').data('reply-to', commentId);
+            $('#comment-text').val(`@${author} `).focus();
+        });
+    }
+
 }); // End of document.ready
