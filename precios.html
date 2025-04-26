@@ -72,7 +72,133 @@
             <div class="row min-vh-100 align-items-center">
                 <div class="col-lg-8 text-white text-center text-lg-start">
                     <h1 class="display-1 fw-bold hero-title mb-4">PectoralGYM</h1>
-                    <p class="lead hero-text mb-5">Transforma tu cuerpo, fortalece tu mente</p>
+                    <p class="lead hero-text mb-5">Compara nuestros precios y planes para elegir lo mejor para tu bolsillo y salud</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Nuestros Planes</h2>
+                <p class="lead">Elige el plan que mejor se adapte a tus objetivos</p>
+                <div class="form-check form-switch d-flex justify-content-center align-items-center gap-4 mt-4">
+                    <label class="form-check-label me-2">Mensual</label>
+                    <input class="form-check-input mx-2" type="checkbox" id="planToggle" style="width: 3em; height: 1.5em;">
+                    <label class="form-check-label ms-2">Anual</label>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Plan Básico -->
+                <div class="col">
+                    <div class="card h-100 pricing-card">
+                        <div class="card-body text-center">
+                            <i class="bi bi-star display-4 mb-3 text-warning"></i>
+                            <h3 class="card-title">Básico</h3>
+                            <div class="pricing-amount mb-3">
+                                <span class="currency">$</span>
+                                <span class="amount" data-monthly="2500" data-annual="25000">2500</span>
+                                <span class="period">/mes</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Acceso al gimnasio
+                                    <i class="bi bi-info-circle ms-2" data-bs-toggle="tooltip" data-bs-placement="top" 
+                                    title="Acceso ilimitado en horario de 8:00 a 22:00"></i>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Sala de musculación
+                                </li>
+                                <li class="mb-2 text-muted">
+                                    <i class="bi bi-x-circle-fill text-danger me-2"></i>
+                                    Clases grupales
+                                </li>
+                                <li class="mb-2 text-muted">
+                                    <i class="bi bi-x-circle-fill text-danger me-2"></i>
+                                    Entrenador personal
+                                </li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100 mt-3">Elegir Plan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plan Premium -->
+                <div class="col">
+                    <div class="card h-100 pricing-card active">
+                        <div class="card-body text-center">
+                            <div class="popular-badge position-absolute top-0 start-50 translate-middle">
+                                <span class="badge bg-warning">Más Popular</span>
+                            </div>
+                            <i class="bi bi-stars display-4 mb-3 text-warning"></i>
+                            <h3 class="card-title">Premium</h3>
+                            <div class="pricing-amount mb-3">
+                                <span class="currency">$</span>
+                                <span class="amount" data-monthly="3500" data-annual="35000">3500</span>
+                                <span class="period">/mes</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Acceso al gimnasio
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Sala de musculación
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Clases grupales
+                                    <i class="bi bi-info-circle ms-2" data-bs-toggle="tooltip" data-bs-placement="top" 
+                                    title="Acceso a todas las clases grupales disponibles"></i>
+                                </li>
+                                <li class="mb-2 text-muted">
+                                    <i class="bi bi-x-circle-fill text-danger me-2"></i>
+                                    Entrenador personal
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary w-100 mt-3">Elegir Plan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plan Elite -->
+                <div class="col">
+                    <div class="card h-100 pricing-card">
+                        <div class="card-body text-center">
+                            <i class="bi bi-diamond display-4 mb-3 text-warning"></i>
+                            <h3 class="card-title">Elite</h3>
+                            <div class="pricing-amount mb-3">
+                                <span class="currency">$</span>
+                                <span class="amount" data-monthly="4500" data-annual="45000">4500</span>
+                                <span class="period">/mes</span>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Acceso al gimnasio
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Sala de musculación
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Clases grupales
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    Entrenador personal
+                                    <i class="bi bi-info-circle ms-2" data-bs-toggle="tooltip" data-bs-placement="top" 
+                                    title="2 sesiones semanales con entrenador personal"></i>
+                                </li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100 mt-3">Elegir Plan</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

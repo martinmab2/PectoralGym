@@ -388,7 +388,6 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
     border: none;
     border-radius: 0;
     margin: 0;
-    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -634,4 +633,72 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
     color: #ffd700;
     font-size: 1.2rem;
     margin-top: 15px;
+}
+/* Pricing Section Styles */
+.pricing-card {
+    position: relative;
+    padding-top: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 1 !important; /* Forzar visibilidad */
+}
+
+.popular-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.popular-badge .badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    color: black;
+}
+
+.pricing-card .card-title,
+.pricing-card .card-body,
+.pricing-card ul li,
+.pricing-amount,
+.pricing-amount .currency,
+.pricing-amount .amount,
+.pricing-amount .period {
+    color: #ffffff !important;
+}
+
+.pricing-amount .period {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.pricing-amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.pricing-card:hover, .pricing-card.active {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-amount .currency {
+    font-size: 1.5rem;
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.form-check-input:checked {
+    background-color: #ffd700;
+    border-color: #ffd700;
+}
+
+.pricing-card i.bi {
+    transition: all 0.3s ease-out;
+}
+
+.pricing-card:hover i.bi {
+    transform: scale(1.2) rotate(15deg);
+    color: #ffd700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }

@@ -309,4 +309,87 @@ $(document).ready(function() {
             });
         }, 200 * (index + 1));
     });
-});
+
+    // Initialize tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    // Pricing toggle functionality
+    $('#planToggle').on('change', function() {
+        const isAnnual = $(this).prop('checked');
+        
+        $('.pricing-amount').each(function() {
+            const $amount = $(this).find('.amount');
+            const $period = $(this).find('.period');
+            
+            const monthly = parseInt($amount.data('monthly'));
+            const annual = parseInt($amount.data('annual'));
+            
+            // Animate the number change
+            $({ value: parseInt($amount.text()) }).animate({
+                value: isAnnual ? annual : monthly
+            }, {
+                duration: 500,
+                easing: 'swing',
+                step: function() {
+                    $amount.text(Math.round(this.value));
+                }
+            });
+            
+            // Update the period text
+            $period.fadeOut(200, function() {
+                $(this).text(isAnnual ? '/año' : '/mes').fadeIn(200);
+            });
+        });
+        
+        // Update savings badges
+        if (isAnnual) {
+            $('.pricing-card').append('<div class="badge bg-success position-absolute top-0 end-0 m-2">16% ahorro</div>');
+        } else {
+            $('.pricing-card .badge.bg-success').remove();
+        }
+    });
+
+    // Animate pricing cards on scroll
+    const animatePricingCards = () => {
+        $('.pricing-card').each(function(index) {
+            const card = $(this);
+            // Asegurar que los precios sean visibles desde el inicio
+            card.css({
+                'opacity': '1',
+                'transform': 'translateY(0)'
+            });
+            
+            // Mantener visible el contenido de la tarjeta
+            card.find('.pricing-amount, .amount, .currency, .period').css({
+                'opacity': '1',
+                'color': '#ffffff'
+            });
+        });
+    };
+
+    // Llamar a la función inmediatamente después de que el documento esté listo
+    animatePricingCards();
+
+    // Asegurar que los precios permanezcan visibles después del toggle
+    $('#planToggle').on('change', function() {
+        const isAnnual = $(this).prop('checked');
+        
+        $('.pricing-amount').each(function() {
+            const $amount = $(this).find('.amount');
+            const $period = $(this).find('.period');
+            
+            // Forzar visibilidad
+            $amount.css('opacity', '1');
+            $period.css('opacity', '1');
+            
+            const monthly = parseInt($amount.data('monthly'));
+            const annual = parseInt($amount.data('annual'));
+            
+            // ...resto del código existente del toggle...
+        });
+    });
+
+}); // End of document.ready
