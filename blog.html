@@ -93,7 +93,7 @@
             <div class="row g-4">
                 <!-- Artículos de Entrenamiento -->
                 <div class="col-12 col-lg-6 mb-4">
-                    <article class="card article-card h-100 bg-dark text-white" data-tags="entrenamiento nutricion">
+                    <article class="card article-card h-100 bg-dark text-white" data-aos="zoom-in-up" data-aos-duration="800" data-aos-once="true" data-aos-delay="50" data-tags="entrenamiento nutricion">
                         <img src="assets/img/spinning.jpg" class="card-img-top" alt="Rutinas de Fuerza">
                         <div class="card-body">
                             <div class="tags mb-2">
@@ -114,7 +114,7 @@
                 </div>
 
                 <div class="col-12 col-lg-6 mb-4">
-                    <article class="card article-card h-100 bg-dark text-white" data-tags="entrenamiento">
+                    <article class="card article-card h-100 bg-dark text-white" data-aos="zoom-in-up" data-aos-duration="800" data-aos-once="true" data-aos-delay="150" data-tags="entrenamiento">
                         <img src="assets/img/hiit.jpg" class="card-img-top" alt="HIIT">
                         <div class="card-body">
                             <div class="tags mb-2">
@@ -135,7 +135,7 @@
 
                 <!-- Artículos de Nutrición -->
                 <div class="col-12 col-lg-6 mb-4">
-                    <article class="card article-card h-100 bg-dark text-white" data-tags="nutricion">
+                    <article class="card article-card h-100 bg-dark text-white" data-aos="zoom-in-up" data-aos-duration="800" data-aos-once="true" data-aos-delay="250" data-tags="nutricion">
                         <img src="assets/img/personalizado1.jpg" class="card-img-top" alt="Proteínas">
                         <div class="card-body">
                             <div class="tags mb-2">
@@ -155,7 +155,7 @@
                 </div>
 
                 <div class="col-12 col-lg-6 mb-4">
-                    <article class="card article-card h-100 bg-dark text-white" data-tags="nutricion">
+                    <article class="card article-card h-100 bg-dark text-white" data-aos="zoom-in-up" data-aos-duration="800" data-aos-once="true" data-aos-delay="350" data-tags="nutricion">
                         <img src="assets/img/pilates.jpg" class="card-img-top" alt="Dieta">
                         <div class="card-body">
                             <div class="tags mb-2">
@@ -176,7 +176,7 @@
 
                 <!-- Artículos de Suplementación -->
                 <div class="col-12 col-lg-6 mb-4">
-                    <article class="card article-card h-100 bg-dark text-white" data-tags="suplementacion">
+                    <article class="card article-card h-100 bg-dark text-white" data-aos="zoom-in-up" data-aos-duration="800" data-aos-once="true" data-aos-delay="450" data-tags="suplementacion">
                         <img src="assets/img/yoga.jpg" class="card-img-top" alt="Creatina">
                         <div class="card-body">
                             <div class="tags mb-2">
@@ -196,7 +196,7 @@
                 </div>
 
                 <div class="col-12 col-lg-6 mb-4">
-                    <article class="card article-card h-100 bg-dark text-white" data-tags="suplementacion">
+                    <article class="card article-card h-100 bg-dark text-white" data-aos="zoom-in-up" data-aos-duration="800" data-aos-once="true" data-aos-delay="550" data-tags="suplementacion">
                         <img src="assets/img/zumba.jpg" class="card-img-top" alt="Pre-entreno">
                         <div class="card-body">
                             <div class="tags mb-2">
@@ -217,7 +217,7 @@
 
                 <!-- Artículos de Lifestyle -->
                 <div class="col-12 col-lg-6 mb-4">
-                    <article class="card article-card h-100 bg-dark text-white" data-tags="lifestyle">
+                    <article class="card article-card h-100 bg-dark text-white" data-aos="zoom-in-up" data-aos-duration="800" data-aos-once="true" data-aos-delay="650" data-tags="lifestyle">
                         <img src="assets/img/pilates3.jpg" class="card-img-top" alt="Descanso">
                         <div class="card-body">
                             <div class="tags mb-2">
@@ -237,7 +237,7 @@
                 </div>
 
                 <div class="col-12 col-lg-6 mb-4">
-                    <article class="card article-card h-100 bg-dark text-white" data-tags="lifestyle">
+                    <article class="card article-card h-100 bg-dark text-white" data-aos="zoom-in-up" data-aos-duration="800" data-aos-once="true" data-aos-delay="750" data-tags="lifestyle">
                         <img src="assets/img/funcional.jpg" class="card-img-top" alt="Motivación">
                         <div class="card-body">
                             <div class="tags mb-2">
@@ -258,7 +258,7 @@
             </div>
 
             <!-- Sección de Comentarios -->
-            <div class="comments-section mt-5 p-4 bg-dark text-white rounded">
+            <div class="comments-section mt-5 p-4 bg-dark text-white rounded" data-aos="fade-up" data-aos-duration="1000">
                 <h3 class="mb-4">Comentarios</h3>
                 <div class="comments-container">
                     <!-- Los comentarios se cargarán dinámicamente -->
@@ -314,5 +314,17 @@
     <script src="js/animations.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            startEvent: 'load',
+            offset: 120,
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            mirror: false,
+            anchorPlacement: 'top-bottom'
+        });
+    </script>
 </body>
 </html>

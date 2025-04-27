@@ -676,6 +676,7 @@ $(document).ready(function() {
     function initBlogFilters() {
         const $articles = $('.article-card');
         const $filterButtons = $('.tags-filter .btn');
+        const $articleContainers = $('.blog-grid .col-12');
 
         $filterButtons.on('click', function() {
             const filter = $(this).data('filter');
@@ -685,16 +686,34 @@ $(document).ready(function() {
             $(this).addClass('active');
             
             if (filter === 'all') {
-                $articles.fadeIn(300);
+                $articles.show();
+                $articleContainers.css({
+                    'width': '',
+                    'padding': '',
+                    'margin': ''
+                });
                 return;
             }
 
             $articles.each(function() {
-                const tags = $(this).data('tags').split(' ');
+                const $article = $(this);
+                const $container = $article.closest('.col-12');
+                const tags = $article.data('tags').split(' ');
+                
                 if (tags.includes(filter)) {
-                    $(this).fadeIn(300);
+                    $article.show();
+                    $container.css({
+                        'width': '',
+                        'padding': '',
+                        'margin': ''
+                    });
                 } else {
-                    $(this).fadeOut(300);
+                    $article.hide();
+                    $container.css({
+                        'width': '0',
+                        'padding': '0',
+                        'margin': '0'
+                    });
                 }
             });
         });

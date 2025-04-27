@@ -781,6 +781,21 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
 }
 
 .blog-grid .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog-grid .col-12 {
+    transition: all 0.3s ease;
+}
+
+.blog-grid .col-12:has(.article-card[style*="display: none"]) {
+    width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.blog-grid .row {
     position: relative;
     z-index: 1;
 }
@@ -922,6 +937,13 @@ max-height: 450px;
 
 .comment-actions a:hover {
     text-decoration: underline;
+}
+.comment-actions a, 
+.reply-actions a,
+.comment-date,
+.text-muted {
+    color: #ffd700 !important;
+    opacity: 1;
 }
 /* Tags Filter Animation */
 .btn-outline-light {
