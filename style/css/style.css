@@ -125,7 +125,6 @@ section {
     overflow: visible; /* Permite que los textos animados sobresalgan */
 }
 
-.hero,
 .hero-content,
 .hero-content .row,
 .hero-content .col-lg-8,
@@ -478,17 +477,6 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
 .gallery .col-md-6:nth-child(5) .card-img-wrapper { height: 300px; }
 .gallery .col-md-6:nth-child(6) .card-img-wrapper { height: 380px; }
 
-/* Gallery Grid */
-.gallery-container {
-    padding: 0;
-}
-
-.row.gallery {
-    --bs-gutter-x: 0.05rem;
-    --bs-gutter-y: 0.05rem;
-    margin: 0;
-}
-
 /* Altura base y overrides específicos */
 .card-img-wrapper {
     height: 300px;
@@ -507,13 +495,6 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
 /* Tercera fila */
 .gallery .col-md-4:nth-child(7) .card-img-wrapper { height: 400px; }
 .gallery .col-md-8:last-child .card-img-wrapper { height: 400px; }
-
-/* Ajustes responsive */
-@media (max-width: 768px) {
-    .card-img-wrapper {
-        height: 300px !important;
-    }
-}
 
 /* Contenedor principal */
 .container {
@@ -824,6 +805,25 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
     opacity: 1 !important;
     transform: none !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+max-height: 450px;
+    min-height: 350px;
+}
+
+.article-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+.article-card .card-body {
+    height: calc(100% - 180px);
+    overflow: hidden;
+}
+
+.article-card .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .article-card:hover {
@@ -877,8 +877,16 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    text-align: center;
     background-color: #333;
     position: relative;
+    display: flex;           /* Añadido para centrar */
+    align-items: center;     /* Añadido para centrar verticalmente */
+    justify-content: center; /* Añadido para centrar horizontalmente */
+    color: white;
+    font-weight: bold;
+    border: 2px solid #dc3545; /* Borde rojo */
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.3); /* Efecto de glow */
 }
 
 .comment-avatar::before {
@@ -891,6 +899,14 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
     border-radius: 50%;
     background-size: cover;
     background-position: center;
+}
+
+/* Comment Date & Actions Styles */
+.comment-actions a:hover,
+.reply-actions a:hover {
+    color: #ffd700 !important;
+    opacity: 0.8;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
 }
 
 .comment-actions {
@@ -907,7 +923,6 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
 .comment-actions a:hover {
     text-decoration: underline;
 }
-
 /* Tags Filter Animation */
 .btn-outline-light {
     transition: all 0.3s ease;
@@ -918,7 +933,6 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
     border-color: #ffd700;
     color: #000;
 }
-
 /* Article Author Styles */
 .article-author {
     display: flex;
@@ -948,7 +962,6 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
     color: #ffd700;
     font-size: 0.9rem;
 }
-
 /* Comment Date Style */
 .comment-date {
     color: #ffffff !important;
