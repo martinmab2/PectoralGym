@@ -672,4 +672,37 @@ $(document).ready(function() {
         });
     }
 
+    // Blog Tags Filter System
+    function initBlogFilters() {
+        const $articles = $('.article-card');
+        const $filterButtons = $('.tags-filter .btn');
+
+        $filterButtons.on('click', function() {
+            const filter = $(this).data('filter');
+            
+            // Toggle active state
+            $filterButtons.removeClass('active');
+            $(this).addClass('active');
+            
+            if (filter === 'all') {
+                $articles.fadeIn(300);
+                return;
+            }
+
+            $articles.each(function() {
+                const tags = $(this).data('tags').split(' ');
+                if (tags.includes(filter)) {
+                    $(this).fadeIn(300);
+                } else {
+                    $(this).fadeOut(300);
+                }
+            });
+        });
+    }
+
+    // Initialize cuando el DOM esté listo
+    if ($('.tags-filter').length) {
+        initBlogFilters();
+    }
+
 }); // End of document.ready

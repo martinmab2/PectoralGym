@@ -954,10 +954,3 @@ pointer-events: none; /* Esto evita que el overlay interfiera con eventos del mo
     color: #ffffff !important;
     opacity: 0.8;
 }
-
-/* Article Grid Responsive */
-@media (max-width: 768px) {
-    .article-card {
-        margin-bottom: 2rem;
-    }
-}
